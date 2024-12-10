@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[minor tick num=3]
+	\addplot {x^3};
+	\addplot {-20*x};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstabletypeset[sci zerofill]{
+	a b
+	5000 1.234e5
+	6000 1.631e5
+	7000 2.1013e5
+	9000 1000000
+}
+\end{document}

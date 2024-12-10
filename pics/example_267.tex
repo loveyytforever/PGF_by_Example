@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[legend cell align=center,
+	legend pos=outer north east]
+\addplot coordinates {(0,0) (1,1)};
+\addplot coordinates {(0,1) (1,2)};
+\addplot coordinates {(0,2) (1,3)};
+\legend{a,fine,legend}
+\end{axis}
+\end{tikzpicture}
+\end{document}

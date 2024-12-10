@@ -1,0 +1,43 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\usepackage{listings}
+\usepackage{multirow}
+\begin{document}
+% An example how to use 
+% \usepackage{multirow} and
+% \usepackage{booktabs}:
+\pgfplotstabletypeset[
+	columns/Z/.style={
+		column name={},
+		assign cell content/.code={% use \multirow for Z column:
+			\ifnum\pgfplotstablerow=0
+				\pgfkeyssetvalue{/pgfplots/table/@cell content}
+					{\multirow{4}{*}{##1}}%
+			\else
+				\pgfkeyssetvalue{/pgfplots/table/@cell content}{}%
+			\fi
+		},
+	},
+	% use \booktabs as well (compare examples above):
+	every head row/.style={before row=\toprule,after row=\midrule},
+	every last row/.style={after row=\bottomrule},
+	row sep=\\,col sep=&,
+	outfile=pgfplotstable.multirow.out,% write it to file
+]{% here: inline data in tabular format:
+	Z    & a & b \\
+	data & 1 & 2 \\
+	     & 3 & 4 \\
+	     & 5 & 6 \\
+	     & 7 & 8 \\
+}
+% ... and show the generated file:
+\lstinputlisting[basicstyle=\footnotesize\ttfamily]{pgfplotstable.multirow.out}
+\end{document}

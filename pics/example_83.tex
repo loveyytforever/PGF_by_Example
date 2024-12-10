@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	xmin=0,xmax=53,
+	ylabel=Age,
+	xlabel=Quantity,
+	enlargelimits=false,
+	ytick=data,
+	yticklabel interval boundaries,
+	xbar interval,
+]
+\addplot
+	coordinates {(10,5) (10.5,10) (15,13) 
+		(24,18) (50,21) (23,25) (10,30) 
+		(3,50) (3,70)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

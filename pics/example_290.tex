@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    scale only axis,
+    xmin=-5,xmax=5,
+    axis y line*=left,% the '*' avoids arrow heads
+    xlabel=$x$,
+    ylabel=First ordinate]
+  \addplot {x^2};
+  \end{axis}
+  
+  \begin{axis}[
+    scale only axis,
+    xmin=-5,xmax=5,
+    axis y line*=right,
+    axis x line=none,
+    ylabel=Second ordinate]
+  \addplot[red] {3*x};
+  \end{axis}
+\end{tikzpicture}
+\end{document}

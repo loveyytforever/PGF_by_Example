@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{patchplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[nodes near coords={(\coordindex)},
+	title=Bilinear from $2\times 2$ matrix input]
+% note that surf implies 'patch type=rectangle'
+\addplot3[surf,shader=interp,samples=2,
+	patch type=bilinear] 
+	{x*y};
+\end{axis}
+\end{tikzpicture}
+\end{document}

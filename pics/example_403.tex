@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	xlabel=$x$ \emph{decreasing} $\to$,
+	x dir=reverse]
+	\addplot {x+rand*0.3};
+\end{axis}
+\end{tikzpicture}
+\end{document}

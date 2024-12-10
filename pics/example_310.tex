@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[normalsize,
+		title=A ``normalsize'' figure,
+		xlabel=The $x$ axis,
+		ylabel=The $y$ axis,
+		minor tick num=1,
+		legend entries={Leg}]
+		\addplot {max(4*x,7*x)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

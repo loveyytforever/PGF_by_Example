@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstableset{
+	create on use/my new col/.style={create col/set={--empty--}},
+	columns/my new col/.style={string type}
+}
+\pgfplotstabletypeset[
+	columns={level,my new col},
+]{pgfplotstable.example1.dat}
+\end{document}

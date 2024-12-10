@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\usepackage{listings}
+\usepackage{listings}
+\begin{document}
+\pgfplotstabletypeset[
+	begin table={<table>}, end table={</table>},
+	typeset cell/.style={
+	  /pgfplots/table/@cell content={<td>#1</td>}
+	},
+	before row=<tr>,after row=</tr>,
+	skip coltypes, typeset=false, 
+	verbatim,% configures number printer
+	TeX comment=,
+	columns={level,dof,error1},
+	outfile=pgfplotstable.example1.out.html,
+]{pgfplotstable.example1.dat}
+\lstinputlisting
+	[basicstyle=\ttfamily\footnotesize]
+	{pgfplotstable.example1.out.html}
+\end{document}

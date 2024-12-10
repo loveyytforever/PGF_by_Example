@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[axis equal image=false,grid=major]
+		\addplot[blue] expression[domain=0:2*pi,samples=300] {sin(deg(x))*sin(2*deg(x))};
+	\end{axis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+	\begin{axis}[axis equal image=true,grid=major]
+		\addplot[blue] expression[domain=0:2*pi,samples=300] {sin(deg(x))*sin(2*deg(x))};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

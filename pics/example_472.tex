@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstabletypeset[
+	sort,sort key=error2,
+	columns={dof,error1,error2},
+	columns/error1/.style={sci,sci subscript,sci zerofill,dec sep align},
+	columns/error2/.style={sci,sci subscript,sci zerofill,dec sep align},
+]
+	{pgfplotstable.example1.dat}
+\end{document}

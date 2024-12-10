@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{patterns}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[xbar,enlargelimits=0.15]
+\addplot
+[draw=blue,pattern=horizontal lines light blue] 
+coordinates
+	{(10,5) (15,10) (5,15) (24,20) (30,25)};
+\addplot
+[draw=black,pattern=horizontal lines dark blue] 
+coordinates 
+	{(3,5) (5,10) (15,15) (20,20) (35,25)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{patchplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[nodes near coords={(\coordindex)},
+	title=Quadratic Triangle]
+\addplot3[patch,patch type=triangle quadr,
+	shader=interp]
+coordinates {
+	(0,0,1) (5,4,0) (0,7,0)
+	(2,3,0) (3,6,0) (-1,4,0)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}

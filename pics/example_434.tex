@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[x tick label as interval]
+	\addplot {3*x};
+\end{axis}
+\end{tikzpicture}
+\end{document}

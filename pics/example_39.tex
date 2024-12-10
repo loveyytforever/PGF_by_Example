@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{polar}
+\begin{document}
+\begin{tikzpicture}
+	\begin{polaraxis}[
+		xtick={0,90,180,270},
+		title=A polar axis]
+	
+	\addplot coordinates {(0,1) (45,1)};
+	\addlegendentry{First}
+	\addplot coordinates {(180,0.5) (0,0)};
+	\addlegendentry{Second}
+	\end{polaraxis}
+\end{tikzpicture}
+\end{document}

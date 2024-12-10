@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	xtick=data,
+	axis x line=center,
+	xticklabels={,,},
+	ytick={-0.6,0,0.1,1},
+	yticklabels={
+		$-\frac{6}{10}$,,
+		$\frac{1}{10}$,$1$},
+	ymajorgrids,
+	axis y line=left,
+	enlargelimits=0.05]
+\addplot coordinates 
+	{(-3,0) (-2,0.1) (-1,-0.6)
+	 (0,1) 
+	 (1,-0.6) (2,0.1) (3,0)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

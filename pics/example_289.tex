@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	separate axis lines=false,
+	every outer x axis line/.append style=
+		{-stealth,red},
+	every outer y axis line/.append style=
+		{-stealth,green!30!black},
+]
+\addplot[blue,id=DoG,
+		samples=100,
+		domain=-15:15] 
+  gnuplot{1.3*exp(-x**2/10) - exp(-x**2/20)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

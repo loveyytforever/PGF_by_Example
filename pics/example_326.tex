@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstabletypeset{pgfplots.testtable2.dat}
+\begin{tikzpicture}
+\begin{loglogaxis}
+\addplot+[error bars/.cd,
+	x dir=both,x fixed relative=0.5,
+	y dir=both,y explicit relative,
+	error mark=triangle*]
+	table[x=x,y=y,y error=errory] 
+	{pgfplots.testtable2.dat};
+\end{loglogaxis}
+\end{tikzpicture}
+\end{document}

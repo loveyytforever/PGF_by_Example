@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	xtick=data,ytick=data,
+	xtick align=center]
+\addplot coordinates 
+	{(-3,0) (-2,0.1) (-1,-0.6) 
+	 (0,1)
+	 (1,-0.6) (2,0.1) (3,0)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

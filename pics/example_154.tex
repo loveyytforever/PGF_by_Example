@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[grid=major,view={210}{30}]
+	\addplot3+[mesh,scatter,samples=10,domain=0:1] 
+		{5*x*sin(2*deg(x)) * y*(1-y)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

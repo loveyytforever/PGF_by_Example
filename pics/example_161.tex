@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[grid=major]
+		\addplot3[surf,shader=interp,
+			samples=25,domain=0:2,y domain=0:1] 
+			{exp(-x) * sin(pi*deg(y))};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		axis lines=center,
+		axis on top,
+		samples=5, domain=-4:4,
+		xtick=data, ytick=data,
+		ztick=\empty, % no z ticks here
+	]
+		\addplot3[surf] {x*y};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

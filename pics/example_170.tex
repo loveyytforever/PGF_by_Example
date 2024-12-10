@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+  	hide axis,
+	xlabel=$x$,ylabel=$y$,
+	mesh/interior colormap name=hot,
+	colormap/blackwhite, 
+ ]
+  \addplot3[domain=-1.5:1.5,surf]
+  	{-exp(-x^2-y^2)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

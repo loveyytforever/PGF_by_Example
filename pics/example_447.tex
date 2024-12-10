@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{semilogyaxis}[log basis y=2,grid=major,samples at={-4,...,4}]
+		\addplot {2^x};
+	\end{semilogyaxis}
+\end{tikzpicture}
+~
+\begin{tikzpicture}
+	\begin{semilogyaxis}[log basis y=10,samples at={-4,...,4}]
+		\addplot {2^x};
+	\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}

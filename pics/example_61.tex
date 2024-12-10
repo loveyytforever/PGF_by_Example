@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+\usepgfplotslibrary{units}
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[use units,
+    x unit=m,x unit prefix=k,
+    y unit=N,y unit prefix=m,
+    xlabel=Distance,ylabel=Force]
+    \addplot coordinates {
+        (1,2.3)
+        (2,2.7)
+        (3,2.1)
+        (4,1.8)
+        (5,1.5)
+        (6,1.1)
+    };
+  \end{axis}
+\end{tikzpicture}
+\end{document}

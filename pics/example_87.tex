@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+  ybar interval,
+  xtick=,% reset from ybar interval
+  xticklabel=
+    {$[\pgfmathprintnumber\tick,
+	   \pgfmathprintnumber\nexttick)$}
+]
+% a data file containing 8000 normally distributed
+% random numbers of mean 0 and variance 1
+\addplot+[hist={
+		data=x,
+		cumulative}]
+	file {plotdata/pgfplots.randn.dat};
+	
+\end{axis}
+\end{tikzpicture}
+\end{document}

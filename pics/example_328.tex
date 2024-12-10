@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{loglogaxis}[
+	grid=both,
+	tick align=outside,
+	tickpos=left]
+\addplot coordinates 
+	{(100,1e-4) (500,1e-5) (1000,3e-6)};
+\addplot coordinates 
+	{(100,1e-5) (500,4e-6) (1000,2e-6)};
+\end{loglogaxis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		colormap={bw}{gray(0cm)=(0); gray(1cm)=(1)}]
+	\addplot+[scatter,only marks,
+		 domain=0:8,samples=100]
+		{exp(x)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

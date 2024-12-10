@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[minor x tick num=4,
+		enlarge x limits={rel=0.5,upper}
+	]
+		\addplot {5 * x^3 - x^2 + 4*x -2};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

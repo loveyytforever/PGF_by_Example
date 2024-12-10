@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+% requires \usepackage{array}
+\pgfplotstabletypeset[
+	use comma,
+	columns={dof,error1,error2,info,{grad(log(dof),log(error2))}},
+	columns/error1/.style={dec sep align},
+	columns/error2/.style={sci,sci subscript,sci zerofill,dec sep align},
+	columns/info/.style={fixed,dec sep align},
+	columns/{grad(log(dof),log(error2))}/.style={fixed,dec sep align}
+]
+	{pgfplotstable.example1.dat}
+\end{document}

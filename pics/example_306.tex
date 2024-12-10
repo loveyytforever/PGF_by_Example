@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[colorbar sampled]
+	\addplot[mesh,samples=40] {sin(deg(x))};	
+	\end{axis}
+\end{tikzpicture}
+\end{document}

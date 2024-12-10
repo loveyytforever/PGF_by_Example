@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot3[surf,shader=flat,
+		draw=black,
+		samples=10,domain=0:1] 
+		{x^2*y};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

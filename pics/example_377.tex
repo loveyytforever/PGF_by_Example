@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+		axis on top=false,
+		axis x line=middle,
+		axis y line=middle]
+    \addplot+[fill] {x^3} \closedcycle;
+    \end{axis}
+\end{tikzpicture}
+\end{document}

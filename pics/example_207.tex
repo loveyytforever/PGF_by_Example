@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+   \begin{axis}[
+      domain=0:6.2832,samples=200,
+      legend style={
+         overlay,
+         at={(-0.5,0.5)},
+         anchor=center},
+      every axis plot post/.append style={mark=none},
+      enlargelimits=false]
+   \addplot {sin(deg(x)+3)+rand*0.05};
+   \addplot {cos(deg(x)+2)+rand*0.05};
+   \legend{Signal 1,Signal 2}
+   \end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{patchplots}
+\begin{document}
+\foreach \level in {0,1,2} {%
+	\begin{tikzpicture}
+	\begin{axis}[
+		nodes near coords={(\coordindex)},
+		footnotesize,
+		title={Triangulation + \level\ refines}]
+	\addplot3[patch,patch type=biquadratic,shader=faceted interp,
+		patch to triangles,patch refines=\level]
+	coordinates {
+		(0,0,0) (6,1,0) (5,5,0) (-1,5,0)
+		(3,1,0) (6,3,0) (2,6,0) (0,3,0)
+		(3,3.75,1)
+	};
+	\end{axis}
+	\end{tikzpicture}%
+}
+\end{document}

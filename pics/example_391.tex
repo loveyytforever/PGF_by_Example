@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{loglogaxis}[axis equal=false,grid=major]
+		\addplot expression[domain=1:10000] {x^-2};
+	\end{loglogaxis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+	\begin{loglogaxis}[axis equal=true,grid=major]
+		\addplot expression[domain=1:10000] {x^-2};
+	\end{loglogaxis}
+\end{tikzpicture}
+\end{document}

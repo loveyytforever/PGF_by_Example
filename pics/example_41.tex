@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{polar}
+\begin{document}
+\begin{tikzpicture}
+	\begin{polaraxis}[title=Cartesian Input]
+	\addplot+[data cs=cart]
+		coordinates {(1,0) (0,1) (-1,0) (0,-1)};
+	\end{polaraxis}
+\end{tikzpicture}
+\end{document}

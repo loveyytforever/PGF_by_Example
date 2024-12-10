@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[y post scale=1]
+	\addplot {x};	
+	\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\begin{axis}[y post scale=2]
+	\addplot {x};	
+	\end{axis}
+\end{tikzpicture}
+\end{document}

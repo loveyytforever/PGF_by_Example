@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	xmin=0,xmax=3,ymin=0,ymax=15,
+	extra y ticks={2.71828},
+	extra y tick labels={$e$},
+	extra x ticks={2.2},
+	extra x tick style={grid=major,
+		tick label style={
+			rotate=90,anchor=east}},
+	extra x tick labels={Cut},
+]
+	\addplot {exp(x)};
+	\addlegendentry{$e^x$}
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstabletypeset[
+	string replace*={2}{6},
+	col sep=&,row sep=\\]{
+  colA & colB & colC \\
+  11   & 12   & 13   \\
+  21   & 22   & 23   \\
+}
+\end{document}

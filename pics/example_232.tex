@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\graphicspath{{figs/}}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[axis on top,title=Graphics Import]
+	% provide options for the legend:
+    \addplot[red,only marks,mark=*,mark size=1pt]
+	graphics
+        [xmin=0,xmax=1,ymin=0,ymax=1,
+        % trim=left bottom right top
+        includegraphics={trim=12 9 12 8,clip}]
+        {external2};
+    \addplot coordinates {(0,0) (1,1)};
+	\legend{Scatter,Line}
+\end{axis}
+\end{tikzpicture}
+\end{document}

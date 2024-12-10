@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{patchplots}
+\begin{document}
+\foreach \level in {0,1,2} {%
+	\begin{tikzpicture}
+	\begin{axis}[
+		nodes near coords={(\coordindex)},
+		footnotesize,
+		title={patch refines=\level}]
+	\addplot3[patch,patch type=triangle quadr,
+		shader=faceted interp,patch refines=\level]
+	coordinates {
+		(0,0,0) (5,4,0) (0,7,0)
+		(2,3,0) (3,6,1) (-1,4,0)
+	};
+	\end{axis}
+	\end{tikzpicture}
+}
+\end{document}

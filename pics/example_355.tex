@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[colormap/bluered]
+	\addplot+[scatter,
+		 scatter src=x,samples=50]
+		{sin(deg(x))};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[colorbar]
+		\addplot[mesh,ultra thick] {x};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

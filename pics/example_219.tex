@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}
+\addplot+[scatter,scatter src=explicit] coordinates {
+	 (900,1e-6) [1]
+    (2600,5e-7) [2]
+    (4000,7e-8) [3]
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}

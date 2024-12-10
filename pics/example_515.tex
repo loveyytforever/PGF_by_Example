@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstablenew[
+	% same as above...
+	create on use/cut/.style={create col/function graph cut y=
+		{2.5e-4}% search for fixed L2 = 2.5e-4
+		{x=Basis,y=L2,ymode=log,xmode=log,
+		 foreach={\i in {1,2}}{plotdata/newexperiment\i.dat}}%
+		{}% just leave this empty.
+	},
+	columns={cut}]
+	{2} 
+	\loadedtable
+% Show the data:
+\pgfplotstabletypeset{\loadedtable}
+\end{document}

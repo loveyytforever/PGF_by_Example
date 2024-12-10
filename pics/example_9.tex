@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{clickable}
+\begin{document}
+\begin{tikzpicture}
+	\begin{loglogaxis}[clickable coords=
+		{Level \thisrow{level} (q=\thisrow{q})}]
+	\addplot table[x=dof,y=error] {
+level  dof     error           q      
+1      4       2.50000000e-01  48        
+2      16      6.25000000e-02  25        
+3      64      1.56250000e-02  41        
+4      256     3.90625000e-03  8         
+5      1024    9.76562500e-04  22        
+6      4096    2.44140625e-04  46        
+7      16384   6.10351562e-05  40        
+8      65536   1.52587891e-05  3
+9      262144  3.81469727e-06  1
+10     1048576 9.53674316e-07  9
+	};
+		
+	\end{loglogaxis}
+\end{tikzpicture}
+\end{document}

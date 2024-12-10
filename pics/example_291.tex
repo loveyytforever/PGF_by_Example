@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{textcomp}
+\begin{document}
+% \usepackage{textcomp}
+\begin{tikzpicture}
+  \begin{axis}[
+    scale only axis,
+    xmin=-5,xmax=5,
+    axis y line*=left,%'*' avoids arrow heads
+    xlabel=$x$,
+    ylabel=Absolute]
+  \addplot {x^2};
+  \end{axis}
+  
+  \begin{axis}[
+    scale only axis,
+    xmin=-5,xmax=5,
+    ymin=0,ymax=1000,
+    yticklabel=
+{$\pgfmathprintnumber{\tick}$\textperthousand},
+    axis y line*=right,
+    axis x line=none,
+    ylabel=per thousand]
+  \end{axis}
+\end{tikzpicture}
+\end{document}

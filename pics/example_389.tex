@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	x={(1cm,-0.5cm)},
+	y=1cm,
+	z=0cm,
+	axis on top,
+	scale mode=scale uniformly,
+	]
+	\addplot3[surf,shader=interp] {x*y};
+\end{axis}
+\end{tikzpicture}
+\end{document}

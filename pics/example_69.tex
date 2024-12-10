@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[samples=8]
+\addplot+[jump mark left,domain=-5:0] 
+	{4*x^2 - 5};
+\addplot+[jump mark right,domain=-5:0] 
+	{0.7*x^3 + 50};
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\pgfplotsset{my personal style/.style=
+	{grid=major,font=\large}}
+\begin{tikzpicture}
+\begin{axis}[my personal style]
+	\addplot coordinates {(0,0) (1,1)};	
+\end{axis}
+\end{tikzpicture}
+\end{document}

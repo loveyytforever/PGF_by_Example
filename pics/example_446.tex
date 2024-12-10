@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	title=\texttt{tick scale 
+		binop=\textbackslash times},
+	tick scale binop=\times]
+\addplot
+	[mark=none,blue,samples=250,
+	 domain=0:5] 
+	{exp(10*x)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

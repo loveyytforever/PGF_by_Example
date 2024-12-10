@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstabletypeset[
+  % suppress the leading row 'col1  col2  col3':
+  every head row/.style={output empty row},
+  col sep=comma,
+  columns/col1/.style={string type,column type=r},
+  columns/col2/.style={string type,column type=l},
+  columns/col3/.style={string type,column type=l},
+  ]
+{
+	col1,col2,col3
+	Col A,B,C
+	The first column,E,F
+}
+\end{document}

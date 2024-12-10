@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot[mesh] {x+sin(deg(x))};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

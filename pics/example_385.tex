@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[x=1cm,y=1cm]
+\addplot expression[domain=0:3] {2*x};
+\end{axis}
+\end{tikzpicture}
+\end{document}

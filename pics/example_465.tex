@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+% in preamble:
+\pgfplotstableset{
+	alias/newname/.initial=b,
+}
+% in document:
+\pgfplotstabletypeset[
+	columns={a,newname},% access to `newname' is the same as to `b'
+]{
+	a b
+	1 2
+	3 4
+	5 6
+}%
+\end{document}

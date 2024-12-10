@@ -1,0 +1,30 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+% load table from somewhere:
+\pgfplotstableread{
+	x y
+	1 1 
+	2 4
+	3 9
+	4 16
+	5 25
+	6 36
+}\loadedtbl
+% create the `regression' column:
+\pgfplotstablecreatecol[linear regression]
+	{regression}
+	{\loadedtbl}
+% store slope
+\xdef\slope{\pgfplotstableregressiona}
+\pgfplotstabletypeset\loadedtbl\\
+The slope is `\slope'.
+\end{document}

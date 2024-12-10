@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel=Variable 1,
+		ylabel=Variable 2,
+		zlabel=value,
+		xlabel style={sloped like x axis},
+		ylabel style={sloped}
+	]
+	\addplot3[surf] {y*x*(1-x)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	restrict y to domain=-10:10,
+	samples=1000,
+	% some fine-tuning for the display:
+	width=10cm, height=210pt,
+	xmin=-4.7124, xmax=4.7124,
+	xtick={-4.7124,-1.5708,...,10},
+	xticklabels={$-\frac32 \pi$,$-\pi/2$,$\pi/2$,$\frac32 \pi$},
+	axis x line=center,
+	axis y line=center]
+\addplot[blue] gnuplot[id=tangens,domain=-1.5*pi:1.5*pi] {tan(x)};
+\legend{$\tan(x)$}
+\end{axis}
+\end{tikzpicture}
+\end{document}

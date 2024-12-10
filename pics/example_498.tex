@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstableset{
+	create on use/slopes1/.style=
+		{create col/gradient loglog={dof}{error1}}}
+\pgfplotstabletypeset[
+	columns={dof,error1,slopes1},
+	columns/error1/.style={sci,sci zerofill},
+	columns/slopes1/.style={
+		postproc cell content/.append code={%
+			\ifnum\pgfplotstablerow=0
+				\pgfkeyssetvalue{/pgfplots/table/@cell content}{\ensuremath{-}}%
+			\fi
+		}%
+	}]
+	{pgfplotstable.example1.dat}
+\end{document}

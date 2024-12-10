@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstableread{pgfplotstable.example1.dat}\loadedtable
+\pgfplotstablecreatecol[
+	create col/assign/.code={%
+		\getthisrow{level}\entry
+		\getnextrow{level}\nextentry
+		\edef\entry{thisrow=\entry; nextrow=\nextentry. 
+			(\#\pgfplotstablerow/\pgfplotstablerows)}%
+		\pgfkeyslet{/pgfplots/table/create col/next content}\entry
+	}]
+	{new}\loadedtable
+\pgfplotstabletypeset[
+	column type=l,
+	columns={level,new},
+	columns/new/.style={string type}
+]\loadedtable
+\end{document}

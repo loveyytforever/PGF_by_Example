@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstableset{
+	create on use/new/.style={create col/copy={level}}
+}
+\pgfplotstabletypeset[
+	columns={level,new},
+	columns/new/.style={column name=Copy of level}
+]{pgfplotstable.example1.dat}
+\end{document}

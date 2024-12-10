@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{semilogyaxis}[
+		yticklabel style={/pgf/number format/fixed},
+		% changes tick labels to a number instead 
+		% of exponential notation:
+		yticklabel={%
+			\pgfmathfloatparsenumber{\tick}%
+			\pgfmathfloatexp{\pgfmathresult}%
+			\pgfmathprintnumber{\pgfmathresult}%
+		},
+	]
+		\addplot {exp(x)};
+	\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,33 @@
+% ! LaTeX Error: File `insdljs.sty' not found.
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{clickable}
+\begin{document}
+\begin{tikzpicture}
+\begin{loglogaxis}[clickable coords code={%
+	\pgfmathprintnumberto[verbatim,precision=1]%
+		{\thisrow{error}}%
+		\error%
+	\pgfmathprintnumberto[verbatim,frac]%
+		{\thisrow{frac}}%
+		\fraccomp%
+	\edef\pgfplotsretval{error \error, R=\fraccomp}%
+}]%
+\addplot table[x=dof,y=error] {
+level  dof     error           frac      
+1      4       2.50000000e-01  0.5        
+2      16      6.25000000e-02  0.75      
+3      64      1.56250000e-02  0.1        
+4      256     3.90625000e-03  0.2         
+5      1024    9.76562500e-04  0.5        
+6      4096    2.44140625e-04  0.8        
+7      16384   6.10351562e-05  0.125        
+8      65536   1.52587891e-05  0.725
+9      262144  3.81469727e-06  0.625
+10     1048576 9.53674316e-07  1
+};
+	
+\end{loglogaxis}
+\end{tikzpicture}
+\end{document}

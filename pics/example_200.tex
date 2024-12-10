@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+Aligning at .......
+\begin{tikzpicture}[baseline]
+\begin{axis}[
+	small,
+	title={The function $\sin x$ is very pretty.},
+	title style={name=MyTitleNode},
+	anchor=MyTitleNode.base,
+]
+	\addplot {sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\end{document}

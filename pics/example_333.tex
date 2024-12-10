@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	xlabel=$x$,
+	ylabel=$y$,
+	zlabel=$z$,
+	every axis x label/.style={
+		at={(rel axis cs:0.5,-0.15,-0.15)}},
+	every axis y label/.style={
+		at={(rel axis cs:1.15,0.5,-0.15)}},
+	every axis z label/.style={
+		at={(rel axis cs:-0.15,-0.15,0.5)}},
+]
+	\addplot3[surf] {x*(1-x)*y};
+\end{axis}
+\end{tikzpicture}
+\end{document}

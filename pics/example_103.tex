@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		const plot,
+		stack plots=y,
+		area style,
+		enlarge x limits=false]
+	\addplot coordinates
+		{(0,1) (1,1) (2,2) (3,2)} 
+		\closedcycle;
+	\addplot coordinates
+		{(0,1) (1,1) (2,2) (3,2)}
+		\closedcycle;
+	\addplot coordinates
+		{(0,1) (1,1) (2,2) (3,2)}
+		\closedcycle;
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[enlargelimits=false]
+\addplot[red,mark=*] 
+	plot[error bars/.cd,
+	y dir=minus,y fixed relative=1,
+	x dir=minus,x fixed relative=1,
+	error mark=none,
+	error bar style={dotted}]
+coordinates
+	{(0,0) (0.1,0.1) (0.2,0.2) 	
+	 (0.5,0.5) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

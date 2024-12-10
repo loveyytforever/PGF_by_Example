@@ -1,0 +1,8 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstableread{pgfplots.timeseries.dat}\loadedtable
+\pgfplotstabletypeset\loadedtable
+\end{document}

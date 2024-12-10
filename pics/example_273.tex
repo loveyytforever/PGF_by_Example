@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[reverse legend]
+	\addplot {x};
+	\addlegendentry{$x$}
+	\addplot {x^2};
+	\addlegendentry{$x^2$}
+	\addplot {x^3};
+	\addlegendentry{$x^3$}
+	\end{axis}
+\end{tikzpicture}
+\end{document}

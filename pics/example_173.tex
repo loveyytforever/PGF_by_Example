@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[view={0}{90}]
+	\addplot3[contour gnuplot]
+		{x*y};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

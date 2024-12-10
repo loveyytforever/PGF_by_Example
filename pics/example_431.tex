@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+  ytickten={-2,-1,0,1,2},
+  yticklabels={$\frac{1}{100}$,%
+  	$\frac{1}{10}$,%
+	1,10,100},
+]
+	\addplot {exp(x)};
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}

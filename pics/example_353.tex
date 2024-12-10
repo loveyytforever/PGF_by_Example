@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[enlarge x limits=false]
+	\addplot[red,samples=500] {sin(deg(x))};
+	\addplot[orange,samples=7] {sin(deg(x))};
+	\addplot[teal,const plot,
+		samples=14] {sin(deg(x))};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

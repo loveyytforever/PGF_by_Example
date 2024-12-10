@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot coordinates 
+		{(0,1) (1,2) (0,3) (-1,2)} --cycle;
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		legend columns=2,
+		legend pos=outer north east,
+		cycle multi list={%
+			color list\nextlist
+			[2 of]mark list
+		}]
+	\addplot {-x};   \addlegendentry{A1}
+	\addplot {-x+1}; \addlegendentry{A2}
+	\addplot {-1.2*x + 4};  \addlegendentry{B1}
+	\addplot {-1.2*x + 5};  \addlegendentry{B2}
+	\addplot {-1.3*x + 9};  \addlegendentry{C1}
+	\addplot {-1.4*x + 10}; \addlegendentry{C2}
+	\end{axis}
+\end{tikzpicture}
+\end{document}

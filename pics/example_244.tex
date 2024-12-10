@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\tikzset{
+	every pin/.style={fill=yellow!50!white,rectangle,rounded corners=3pt,font=\tiny},
+	small dot/.style={fill=black,circle,scale=0.3}
+}
+\begin{tikzpicture}
+	\begin{axis}[
+		xticklabel style={draw=red},
+		clip=false,
+		title=\texttt{ticklabel cs} and its optional shift
+	]
+	\addplot3 coordinates {(-5,-5,-5) (5,5,5)};
+	\draw[blue,thick,->]      (xticklabel cs:0,0)     -- (xticklabel cs:1,0);
+	\draw[red,thick,->]       (xticklabel cs:0,5pt)   -- (xticklabel cs:1,5pt);
+	\draw[magenta,thick,->]   (xticklabel cs:0,10pt)  -- (xticklabel cs:1,10pt);
+	\draw[green,thick,->]     (xticklabel cs:0,15pt)  -- (xticklabel cs:1,15pt);
+	\node[small dot,pin=0:{\texttt{xticklabel cs:1,0}}]      at (xticklabel cs:1,0) {};
+	\node[small dot,pin=0:{\texttt{xticklabel cs:1,15pt}}]   at (xticklabel cs:1,15pt) {};
+	\draw[blue,thick,->]      (xticklabel cs:0,0)     -- (xticklabel cs:0,15pt);
+	\draw[blue,thick,->]      (xticklabel cs:1,0)     -- (xticklabel cs:1,15pt);
+	\end{axis}
+\end{tikzpicture}
+\end{document}

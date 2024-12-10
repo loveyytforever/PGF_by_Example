@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+% requires \usepackage{array}
+\pgfplotstableset{% configuration, for example, in preamble:
+	create on use/quot1/.style={create col/quotient=error1},
+	create on use/quot2/.style={create col/quotient=error2},
+	columns={error1,error2,quot1,quot2},
+	%
+	% display styles:
+	columns/error1/.style={sci,sci zerofill},
+	columns/error2/.style={sci,sci zerofill},
+	columns/quot1/.style={dec sep align},
+	columns/quot2/.style={dec sep align}
+}
+\pgfplotstabletypeset{pgfplotstable.example1.dat}
+\end{document}

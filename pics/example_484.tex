@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstabletypeset[
+	every row 1 column colB/.style={string replace*={2}{4}},
+	every row 0 column colA/.style={preproc/expr={##1*8}},
+	col sep=&,row sep=\\]{
+  colA & colB & colC \\
+  11   & 12   & 13   \\
+  21   & 22   & 23   \\
+}
+\end{document}

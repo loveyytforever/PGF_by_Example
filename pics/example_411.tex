@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\pgfplotsset{
+	every axis plot post/.append style=
+		{mark=none}}
+\begin{axis}[
+	legend style={
+		at={(0.03,0.97)},anchor=north west},
+	domain=0:1]
+	\addplot {x^2};
+	\addplot {exp(x)};
+	\legend{$x^2$,$e^x$}
+\end{axis}
+\end{tikzpicture}
+\end{document}

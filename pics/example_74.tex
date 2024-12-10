@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+  	title=Uses lowest $x$ coords for xmin,
+    xbar,
+    width=12cm, height=3.5cm, enlarge y limits=0.5,
+    xlabel={\#participants},
+    symbolic y coords={no,yes},
+    ytick=data,
+    nodes near coords, nodes near coords align={horizontal},
+    ]
+    \addplot coordinates {(1,no) (9,yes)};
+  \end{axis}
+\end{tikzpicture}
+\end{document}

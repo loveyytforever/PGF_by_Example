@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstablesort[sort cmp=string <]\result{% 'Header' is the column name:
+	Header
+	the
+	quick
+	brown
+	fox
+	jumps
+	over
+	the
+	lazy
+	dog
+}
+\pgfplotstabletypeset[string type]{\result}%
+\end{document}

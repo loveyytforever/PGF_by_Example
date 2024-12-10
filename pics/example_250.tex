@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}
+	\foreach \p in {1,2,3} {
+	  \addplot {x^\p};
+	  \addlegendentryexpanded{$x^\p$}
+	}
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel=$x$,
+		ylabel=$y$,
+		zlabel={$f(x,y) = x\cdot y$},
+		title=A Scatter Plot Example]
+	\addplot3+[only marks,scatter] table 
+		{plotdata/pgfplotsexample4_grid.dat};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

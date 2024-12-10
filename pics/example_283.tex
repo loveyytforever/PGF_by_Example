@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	axis x line=bottom,
+	axis y line=left,
+	xlabel=$x$,ylabel=$\sqrt{|x|}$
+]
+\addplot[blue,mark=none,
+	 domain=-4:4,samples=501]
+	{sqrt(abs(x))};
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{polar}
+\begin{document}
+\begin{tikzpicture}
+	\begin{polaraxis}
+	\addplot+[polar comb] 
+		coordinates {(300,1) (20,0.3) (40,0.5) 
+			(120,1) (200,0.4)};
+	\end{polaraxis}
+\end{tikzpicture}
+\end{document}

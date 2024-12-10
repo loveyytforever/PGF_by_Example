@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		xtick={0,1.5708,...,10},
+		domain=0:2*pi,
+		scaled x ticks={real:3.1415},
+		xtick scale label code/.code={$\cdot \pi$}]
+	\addplot {sin(deg(x))};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	xtick={-1.5,-1,...,1.5},
+	xticklabels={%
+		$-1\frac 12$,
+		$-1$,
+		$-\frac 12$,
+		$0$,
+		$\frac 12$,
+		$1$},
+	% note: \frac can be done automatically:
+	% xticklabel style={/pgf/number format/frac},
+]
+\addplot[smooth,blue,mark=*] 
+coordinates {
+	(-1,    1)
+	(-0.75, 0.5625)
+	(-0.5,  0.25)
+	(-0.25, 0.0625)
+	(0,     0)
+	(0.25,  0.0625)
+	(0.5,   0.25)
+	(0.75,  0.5625)
+	(1,     1)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}

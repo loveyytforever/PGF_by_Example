@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	ylabel=$y$ \emph{decreasing} $\to$,
+	xlabel=$x$ normal,
+	title=reversed axis,
+	y dir=reverse,
+	colorbar,
+	colorbar style={y dir=reverse}]
+	\addplot+[mesh,scatter] {x^15};
+\end{axis}
+\end{tikzpicture}
+\end{document}

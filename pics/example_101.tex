@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[xbar stacked]
+	\addplot coordinates
+		{(1,0) (2,1) (2,2) (3,3)};
+	\addplot coordinates
+		{(1,0) (2,1) (2,2) (3,3)};
+	\addplot coordinates
+		{(1,0) (2,1) (2,2) (3,3)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

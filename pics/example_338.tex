@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[tiny]
+\addplot coordinates {
+	(0,0) (1,0) 
+	(1,1) (2,1)}
+	[pos segment=0,yshift=7pt,font=\footnotesize]
+	node[pos=0] {0} 
+	node[pos=0.5] {0.5} 
+	node[pos=1] {1};
+\end{axis}
+\end{tikzpicture}
+\end{document}

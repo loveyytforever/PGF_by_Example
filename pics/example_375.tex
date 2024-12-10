@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\pgfplotsset{every axis/.append style={
+	after end axis/.code={
+		\fill[red] (axis cs:1,10) circle(5pt);
+		\node at (axis cs:-4,10) 
+			{\large This text has been inserted using \texttt{after end axis}.};
+	}}}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot {x^2};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

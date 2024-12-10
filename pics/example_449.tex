@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot+[data cs=polar,domain=0:360] (\x,1);
+	\end{axis}
+\end{tikzpicture}
+\end{document}

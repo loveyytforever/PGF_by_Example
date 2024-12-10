@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[
+  paperheight=11in, paperwidth=12in,
+  hmargin=.75in, top=1in,
+]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{multicol}
+\usepackage{lastpage}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\setminted{
+  fontsize=\small,
+  bgcolor=bg,
+  breaklines=true, 
+  tabsize=2,
+  breakanywhere=true,
+  breaksymbolright=$\swarrow$,
+  breakanywheresymbolpre=,
+  breaksymbolleft=,
+}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Page \thepage\ of\ \pageref{LastPage}}
+\chead{Eureka}
+\lhead{PGF Example}
+\cfoot{}
+
+\ExplSyntaxOn
+\cs_new:Npn \__input_tex_pdf:n #1 {
+  \begin{figure}[!htb]
+  \begin{multicols}{2}
+  \file_if_exist:nTF {./pics/example_#1.tex}
+    {
+      \inputminted{latex}{./pics/example_#1.tex}
+    }{
+      \typeout{File ./pics/example_#1.tex does not exist}
+      % \inputminted{latex}{./pics/subs.tex}
+    }
+  \columnbreak
+  \begin{center}
+    \file_if_exist:nT {./pics/example_#1.tex}{
+      \file_if_exist:nTF {./pics/example_#1.pdf}
+        {
+          \vspace*{0em}
+          \includegraphics[width=.55\linewidth]{./pics/example_#1.pdf}\par
+          \textsc{Figure:~ Example\_#1.pdf}
+        }{
+          \typeout{File ./pics/example_#1.pdf does not exist}
+          \vspace*{0em}
+          \includegraphics[width=.25\linewidth]{example-image-a}\par
+          \textsc{Figure:~ Example\_#1.pdf~ Missing}
+        }  
+    }
+  \end{center}
+  \end{multicols}
+  % \caption{EXAMPLE~ #1}
+  \label{fig:example_#1}
+  \end{figure}
+}
+\int_new:N \g__current_example_max_int 
+\int_gset:Nn \g__current_example_max_int {0}
+\NewDocumentCommand{\inputTexPDF}{O{1}m}
+  {
+    \int_step_inline:nnn {#1}{#2}
+      { 
+        \__input_tex_pdf:n {##1} 
+        \file_if_exist:nT {./pics/example_##1.tex}
+        { 
+          \int_gadd:Nn \g__current_example_max_int {1} 
+          \int_compare:nT {\g__current_example_max_int = 10}
+            { \clearpage 
+              \int_gset:Nn \g__current_example_max_int {0}
+            }
+        }
+      }
+  }
+\ExplSyntaxOff
+
+\begin{document}
+\begin{titlepage}
+  \vspace*{\fill}\begin{center} 
+    \begin{tabular}{c}
+      \textsc{\Huge Learn PGF by Examples} \\[5em]
+      Original from project:pgf-tikz/pgfplots \\[2em]
+      ReTypeset by Eureka \\[2em]
+      \today
+    \end{tabular}
+  \end{center}\vspace*{\fill}
+\end{titlepage}
+
+\inputTexPDF{524}
+\end{document}
+

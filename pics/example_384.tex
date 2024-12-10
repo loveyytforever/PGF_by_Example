@@ -1,0 +1,37 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\pgfplotsset{every axis/.append style={%
+	width=6cm,
+	xmin=7e-3,xmax=7e-2,
+	extra x ticks={3e-2,6e-2},
+	extra x tick style={major tick length=0pt,font=\footnotesize}
+}}%
+\begin{tikzpicture}%
+	\begin{loglogaxis}[
+		xtick={1e-2},
+		title=with minor tick identification,
+		extra x tick style={
+			log identify minor tick positions=true}]
+	\addplot coordinates {
+		(1e-2,10)
+		(3e-2,100)
+		(6e-2,200)
+	};
+	\end{loglogaxis}
+\end{tikzpicture}%
+\begin{tikzpicture}%
+	\begin{loglogaxis}[
+		xtick={1e-2},
+		title=without minor tick identification,
+		extra x tick style={
+			log identify minor tick positions=false}]
+	\addplot coordinates {
+		(1e-2,10)
+		(3e-2,100)
+		(6e-2,200)
+	};
+	\end{loglogaxis}%
+\end{tikzpicture}%
+\end{document}

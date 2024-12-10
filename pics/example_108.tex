@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[enlargelimits=false]
+	\addplot+[only marks,samples=400]
+		{rand};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

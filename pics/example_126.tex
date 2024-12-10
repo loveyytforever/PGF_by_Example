@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[view={-45}{45},
+		xlabel=$x$,ylabel=$y$,zlabel=$z$]
+		\addplot3[surf] {x};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

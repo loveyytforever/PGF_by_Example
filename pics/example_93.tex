@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	domain=0:1,
+	xmax=1,
+	ymax=1,
+]
+\addplot3[surf] {x*y};
+\addplot3[blue,/pgfplots/quiver,
+	quiver/u=y,
+	quiver/v=x,
+	quiver/w=0,
+	quiver/scale arrows=0.1,
+	-stealth,samples=10] {1};
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}%
+   \begin{axis}[
+      title=A title,
+      ylabel style={overlay},
+      yticklabel style={overlay},
+      xlabel={$x$},
+      ylabel={$y$},
+      legend style={at={(0.5,0.97)},
+         anchor=north,legend columns=-1},
+      domain=-2:2
+   ]
+   \addplot {x^2};
+   \addplot {x^3};
+   \addplot {x^4};
+   \legend{$x^2$,$x^3$,$x^4$}
+   \end{axis}
+\end{tikzpicture}%
+\end{document}

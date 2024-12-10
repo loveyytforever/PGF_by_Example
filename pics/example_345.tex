@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\begin{document}
+\begin{tikzpicture}
+\begin{loglogaxis}
+ \addplot table[x=dof,y=error2] 
+    {pgfplotstable.example1.dat};	
+  \addlegendentry{$y(x)$}
+ \addplot table[
+  	x=dof,
+  	y={create col/linear regression={y=error2}}] 
+    {pgfplotstable.example1.dat};	
+  % might be handy occasionally:
+  %\xdef\slope{\pgfplotstableregressiona} 
+ \addlegendentry{slope 
+   $\pgfmathprintnumber{\pgfplotstableregressiona}$}
+\end{loglogaxis}
+\end{tikzpicture}
+\end{document}

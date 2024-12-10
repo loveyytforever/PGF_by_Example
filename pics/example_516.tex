@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstableread{pgfplotstable.example1.dat}\loadedtable
+\pgfplotstablemodifyeachcolumnelement{error1}\of\loadedtable\as\cell{%
+	\edef\cell{\#\pgfplotstablerow: \cell}%
+}
+\pgfplotstabletypeset[columns=error1,string type]{\loadedtable}
+\end{document}

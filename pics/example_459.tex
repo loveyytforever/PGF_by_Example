@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstableread{pgfplotstable.example1.dat}\loadedtable
+\pgfplotstabletypeset[columns={dof,error1}]\loadedtable
+\hspace{2cm}
+\pgfplotstabletypeset[columns={dof,error2}]\loadedtable
+\end{document}

@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	xtick=\empty,
+	ytick={-2,0.3,3,3.7,4.5}]
+\addplot+[smooth] coordinates {
+	(-2,3) (-1.5,2) (-0.3,-0.2) 
+	(1,1.2) (2,2) (3,5)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

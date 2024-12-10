@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{semilogyaxis}[log ticks with fixed point]
+	\addplot+[domain=0:10] {exp(x)};
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}

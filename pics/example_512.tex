@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+% requires \usepackage{array}
+\pgfplotstableset{% configuration, for example in preamble:
+	create on use/slopes1/.style={create col/gradient semilogy={level}{error1}},
+	columns={level,error1,slopes1},
+	% display styles:
+	columns/level/.style={int detect},
+	columns/error1/.style={sci,sci zerofill,sci subscript},
+	columns/slopes1/.style={dec sep align}
+}
+\pgfplotstabletypeset{pgfplotstable.example1.dat}
+\end{document}

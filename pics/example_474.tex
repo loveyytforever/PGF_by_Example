@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+% requires \usepackage{colortbl}
+\pgfplotstabletypeset[
+ every even column/.style={
+  column type/.add={>{\columncolor[gray]{.8}}}{}
+}]
+	{pgfplotstable.example1.dat}
+\end{document}

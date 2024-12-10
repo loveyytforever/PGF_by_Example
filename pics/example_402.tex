@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+ % Show (automatically) computed limits:
+ title={
+  Axis limits are 
+  $
+ [\pgfmathprintnumber{\pgfkeysvalueof{/pgfplots/xmin}}
+ :\pgfmathprintnumber{\pgfkeysvalueof{/pgfplots/xmax}}
+ ]  \times 
+ [\pgfmathprintnumber{\pgfkeysvalueof{/pgfplots/ymin}}
+ :\pgfmathprintnumber{\pgfkeysvalueof{/pgfplots/ymax}}
+ ]$ },
+]
+	\addplot {x^2};
+\end{axis}
+\end{tikzpicture}
+\end{document}

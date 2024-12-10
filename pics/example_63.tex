@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}
+	\addplot+[sharp plot] coordinates 
+		{(0,0) (1,2) (2,3)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

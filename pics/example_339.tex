@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}
+\addplot3[contour gnuplot,domain=0:1] {x*y}
+	[sloped,
+	 allow upside down,
+	 pos segment=2,
+	 every node/.style={yshift=7pt}]
+	node[pos=0] {0} 
+	node[pos=0.5] {0.5} 
+	node[pos=1] {1}
+	;
+\end{axis}
+\end{tikzpicture}
+\end{document}

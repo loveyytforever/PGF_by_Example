@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot[patch,table/row sep=\\,patch table={%
+		0 1 2\\
+		1 2 3\\
+		4 3 5\\
+	}]
+	table[row sep=\\,point meta=\thisrow{c}] {
+		x y c  \\
+		0 0 0.2\\% 0
+		1 1 0  \\% 1
+		2 0 1  \\% 2
+		3 1 0  \\% 3
+		2 0 0.5\\% 4
+		4 0 0.5\\% 5
+	};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

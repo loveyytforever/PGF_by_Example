@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot[mesh,point meta=explicit] 
+		coordinates {
+			(0,0)   [0]
+			(1,0.1) [1]
+			(2,0.1) [2]
+			(3,0.3) [3]
+			(4,0.3) [4]
+		};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot+[scatter,only marks,
+		 samples=50,scatter src=y]
+		{x-x^2};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

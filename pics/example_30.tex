@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{patchplots}
+\begin{document}
+\foreach \level in {0,1,2} {%
+	\begin{tikzpicture}
+	\begin{axis}[
+		footnotesize,
+		title={Faceted + \level\ refines}]
+	\addplot3[patch,patch type=biquadratic,shader=faceted,
+		patch refines=\level]
+	coordinates {
+		(0,0,1) (6,1,0) (5,5,0) (-1,5,0)
+		(3,1,0) (6,3,0) (2,6,0) (0,3,0)
+		(3,3.75,0)
+	};
+	\end{axis}
+	\end{tikzpicture}
+}
+\end{document}

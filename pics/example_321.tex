@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	samples=20,
+	x filter/.code={
+		\ifnum\coordindex>4
+			\ifnum\coordindex<11
+				\def\pgfmathresult{}
+			\fi
+		\fi
+	}]
+\addplot {x^2};
+\end{axis}
+\end{tikzpicture}
+\end{document}

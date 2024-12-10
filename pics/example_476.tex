@@ -1,0 +1,45 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\newcolumntype{C}{>{\centering\arraybackslash}p{6mm}}% a centered fixed-width-column
+\pgfplotstabletypeset[
+	col sep=&,
+	row sep=\\,
+	every head row/.style={
+	% as in the previous example, this patches the first row:
+		before row={
+			\hline
+			\rowcolor{lightgray}
+			\multicolumn{3}{|>{\columncolor{lightgray}}c|}{Quantenzahlen} & Term--\\
+			\rowcolor{lightgray}
+		},
+		after row=\hline,
+	},
+	every last row/.style={
+		after row=\hline},
+	% define column-specific styles:
+	columns/n/.style={column type=|C,column name=$n$},
+	columns/l/.style={column type=|C,column name=$\ell$},
+	columns/lambda/.style={column type=|C,column name=$\lambda$},
+	columns/text/.style={column type=|c|,column name=bezeichnung,
+		string type % <-it contains formatted data
+	},
+]
+{
+n & l & lambda & text\\
+1 & 0 & 0 & $1 s\sigma$ \\
+2 & 0 & 0 & $2 s\sigma$ \\
+2 & 1 & 0 & $2 p\sigma$ \\
+2 & 1 & 1 & $2 p \pi $\\
+3 & 2 & 0 & $3 d\sigma$ \\
+3 & 2 & 2 & $3 d\delta$ \\
+}
+\end{document}

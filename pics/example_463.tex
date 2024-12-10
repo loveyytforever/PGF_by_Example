@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstabletypeset[skip first n=4]{%<- this '%' is important. Otherwise, the 
+                                      %newline here would delimit an (empty) row.
+	XYZ Format,
+	Version 1.234
+	Date 2010-09-01
+	@author Mustermann
+	A B C
+	1 2 3
+	4 5 6
+}
+\end{document}

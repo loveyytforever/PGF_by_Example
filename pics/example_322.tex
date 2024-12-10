@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	samples=20,
+	skip coords between index={5}{11},
+	skip coords between index={15}{18}]
+\addplot {x^2};
+\end{axis}
+\end{tikzpicture}
+\end{document}

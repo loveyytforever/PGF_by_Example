@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=linestyles]
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,30 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	title={Cycle color between successive plots, then marks},
+	cycle multi list={
+		mark list\nextlist
+		blue,red%
+	},
+	samples=3,
+	legend entries={0,...,20},
+	legend pos=outer north east
+]
+	\addplot {x};
+	\addplot {x-1};
+	\addplot {x-2};
+	\addplot {x-3};
+	\addplot {x-4};
+	\addplot {x-5};
+	\addplot {x-6};
+	\addplot {x-7};
+	\addplot {x-8};
+	\addplot {x-9};
+	\addplot {x-10};
+	\addplot {x-11};
+\end{axis}
+\end{tikzpicture}
+\end{document}

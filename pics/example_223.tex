@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{loglogaxis}[
+		title={$\frac{1}{x^2}$}]
+	\addplot[blue,domain=1:1e30] 
+		{x^-2};
+	\end{loglogaxis}
+\end{tikzpicture}
+\end{document}

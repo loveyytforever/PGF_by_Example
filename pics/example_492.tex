@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotstableset{
+	columns={error1,sqrterror1},
+	create on use/sqrterror1/.style={create col/copy=error1},
+	columns/error1/.style={column name=$\epsilon$},
+	columns/sqrterror1/.style={sqrt,column name=$\sqrt \epsilon$},
+	sci,sci 10e,precision=3,sci zerofill
+}
+\pgfplotstabletypeset{pgfplotstable.example1.dat}
+\end{document}

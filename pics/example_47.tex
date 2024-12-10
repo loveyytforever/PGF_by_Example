@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{polar}
+\begin{document}
+\begin{tikzpicture}
+	\begin{polaraxis}[xmin=45,xmax=405]
+	\addplot coordinates {(0,1) (90,1) (180,1) (270,1)};
+	\end{polaraxis}
+\end{tikzpicture}
+\end{document}

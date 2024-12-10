@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+% requires \usepackage{array}
+\pgfplotstableset{% configuration, for example in preamble:
+	create on use/slopes1/.style={create col/gradient loglog={dof}{error1}},
+	create on use/slopes2/.style={create col/gradient loglog={dof}{error2}},
+	columns={dof,error1,error2,slopes1,slopes2},
+	% display styles:
+	columns/dof/.style={int detect},
+	columns/error1/.style={sci,sci zerofill},
+	columns/error2/.style={sci,sci zerofill},
+	columns/slopes1/.style={dec sep align},
+	columns/slopes2/.style={dec sep align}
+}
+\pgfplotstabletypeset{pgfplotstable.example1.dat}
+\end{document}

@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{loglogaxis}[enlarge x limits={abs=11}]
+		\addplot+[domain=1:100000] {x^-2};
+	\end{loglogaxis}
+\end{tikzpicture}
+\end{document}

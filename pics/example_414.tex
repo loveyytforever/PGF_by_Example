@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{dateplot}\usepackage{eurosym}
+\begin{document}
+% requires \usepgfplotslibrary{dateplot} !
+\pgfplotstabletypeset[string type]{plotdata/accounts.dat}
+\begin{tikzpicture}
+	\begin{axis}[
+		date coordinates in=x,
+		xticklabel={\day.\month.},
+		xlabel={2008},
+		stack plots=y,
+		yticklabel={\pgfmathprintnumber{\tick}\EUR{}}, % <- requires \usepackage{eurosym}
+		ylabel=Total credit,
+		ylabel style={yshift=10pt},
+		legend style={
+			at={(0.5,-0.3)},anchor=north,legend columns=-1}]
+		
+	\addplot table[x=date,y=account1] {plotdata/accounts.dat};
+	\addplot table[x=date,y=account2] {plotdata/accounts.dat};
+	\addplot table[x=date,y=account3] {plotdata/accounts.dat};
+	\legend{Giro,Tagesgeld,Sparbuch}
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[nodes near coords={(\coordindex)},
+		title=Rectangle from patch input]
+	\addplot[patch,patch type=rectangle] 
+	coordinates {
+		(0,0) (1,0) (1,1) (0,1)
+	};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

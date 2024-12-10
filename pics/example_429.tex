@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+	samples=8,
+	ytickten={-6,-4,...,4},
+	domain=0:10]
+\addplot {2^(-2*x + 6)};
+\addlegendentry{$2^{-2x + 6}$}
+% or invoke gnuplot to generate coordinates:
+\addplot gnuplot[id=pow2] 
+	{2**(-1.5*x -3)};
+\addlegendentry{$2^{-1.5x -3}$}
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}

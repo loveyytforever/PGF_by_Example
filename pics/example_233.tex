@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[axis on top,title=Graphics Import]
+		\addplot graphics
+			% instead of the min/max things:
+			[points={(0,1) (1,0)},
+			% trim=left bottom right top
+			includegraphics={trim=12 9 12 8,clip}]
+			{external2};
+		\addplot coordinates {(0,0) (1,1)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

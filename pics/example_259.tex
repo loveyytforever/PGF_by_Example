@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[tiny,title=With legend box]
+\addplot[blue]{x};
+\addplot[red]{2*x};
+\legend{$x$,$2x$}
+\end{axis}
+\end{tikzpicture}
+\end{document}

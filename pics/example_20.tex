@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{patchplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[enlargelimits,
+	nodes near coords={(\coordindex)},
+	title=Single Triangle patch]
+\addplot3[patch,shader=interp] coordinates {
+	(0,0,1)
+	(1,0,0)
+	(1,1,0)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}

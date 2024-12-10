@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[view={60}{30}]
+\addplot3+[domain=0:5*pi,samples=60,samples y=0] 
+	({sin(deg(x))},
+	 {cos(deg(x))},
+	 {2*x/(5*pi)});
+\end{axis}
+\end{tikzpicture}
+\end{document}

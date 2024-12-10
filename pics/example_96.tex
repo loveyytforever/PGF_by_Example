@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[stack plots=y]
+	\addplot coordinates
+		{(0,1) (1,1) (2,2) (3,2)};
+	\addplot coordinates
+		{(0,1) (1,1) (2,2) (3,2)};
+	\addplot coordinates
+		{(0,1) (1,1) (2,2) (3,2)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

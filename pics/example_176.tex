@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        title={$x \exp(-x^2-y^2)$},
+		domain=-2:2,
+		enlargelimits,
+        view={0}{90},
+    ]
+   \addplot3[
+     contour gnuplot={levels={-0.1,-0.2,-0.6}},
+   	 thick]
+          {exp(0-x^2-y^2)*x};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

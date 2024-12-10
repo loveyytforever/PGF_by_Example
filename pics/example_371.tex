@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage[pdftex]{pgfplots_ocg_copy}
+\begin{document}
+% requires \usepackage[pdftex]{ocg}
+\begin{tikzpicture}
+\begin{axis}[
+	title=Dynamic PDF Layer Support (see Acrobat Layers),
+	view={110}{35}]
+\addplot3+[
+	execute at begin plot visualization=\begin{ocg}{First Layer}{FirstLayer}{0},
+	execute at end plot visualization=\end{ocg},
+]
+	coordinates {(0,0,12) (0,1,2) (1,0,6) (0,0,12)};
+\addplot3+[
+	execute at begin plot visualization=\begin{ocg}{Second Layer}{SecondLayer}{0},
+	execute at end plot visualization=\end{ocg},
+]
+	coordinates {(0,0,9) (0,1,8) (1,0,4) (0,0,9)};
+\addplot3+[
+	execute at begin plot visualization=\begin{ocg}{Third Layer}{ThirdLayer}{0},
+	execute at end plot visualization=\end{ocg},
+]
+	coordinates {(0,0,1) (0,1,7) (1,0,3) (0,0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

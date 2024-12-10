@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	axis x line=middle,
+	axis y line=right,
+	ymax=1.1, ymin=-1.1,
+	xlabel=$x$,ylabel=$\sin x$
+]
+	\addplot[blue,mark=none,
+		 domain=-10:0,samples=40]
+		{sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\end{document}

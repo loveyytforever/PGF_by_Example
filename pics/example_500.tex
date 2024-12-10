@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
+\begin{document}
+% this key setting could be provided in the document's preamble:
+\pgfplotstableset{
+	% define how the 'new' column shall be filled:
+	create on use/new/.style={create col/set list={4,5,6,7,...,10}}}
+% create a new table with 11 rows and column 'new':
+\pgfplotstablenew[columns={new}]{11}\loadedtable
+% show it:
+\pgfplotstabletypeset[empty cells with={---}]\loadedtable
+\end{document}

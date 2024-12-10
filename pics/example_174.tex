@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}
+	\addplot3[contour gnuplot]
+		{exp(0-x^2-y^2)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}
